@@ -1,0 +1,251 @@
+// TODO: Refactor utilities to be more like tailwind based on rems
+
+// ================
+// Margins
+// ================
+.margin-bottom-5 {
+  margin-bottom: 5px;
+}
+
+.margin-bottom-10 {
+  margin-bottom: 10px;
+}
+
+.margin-bottom-20 {
+  margin-bottom: 20px;
+}
+
+.margin-bottom-40 {
+  margin-bottom: 40px;
+}
+
+.margin-bottom-60 {
+  margin-bottom: 60px;
+}
+
+.margin-bottom-80 {
+  margin-bottom: 80px;
+}
+
+.margin-bottom-100 {
+  margin-bottom: 100px;
+}
+
+.margin-top-5 {
+  margin-top: 5px;
+}
+
+.margin-top-10 {
+  margin-top: 10px;
+}
+
+.margin-top-15-important {
+  margin-top: 15px !important;
+}
+
+.margin-top-20 {
+  margin-top: 20px;
+}
+
+.margin-top-40 {
+  margin-top: 40px;
+}
+
+.margin-top-60 {
+  margin-top: 60px;
+}
+
+.margin-top-80 {
+  margin-top: 80px;
+}
+
+.margin-top-100 {
+  margin-top: 100px;
+}
+
+.margin-right-5 {
+  margin-right: 5px;
+}
+
+.margin-right-10 {
+  margin-right: 10px;
+}
+
+.margin-right-20 {
+  margin-right: 20px;
+}
+
+.no-margin {
+  margin: 0 !important;
+}
+
+.no-margin-bottom {
+  margin-bottom: 0 !important;
+}
+
+.no-margin-left {
+  margin-left: 0 !important;
+}
+
+.no-margin-top {
+  margin-top: 0 !important;
+}
+
+.no-margin-right {
+  margin-right: 0 !important;
+}
+
+// ================
+// Paddings
+// ================
+.padding-15 {
+  padding: 15px;
+}
+
+.padding-left-right-15 {
+  padding: 0 15px;
+}
+
+.padding-bottom-top-15 {
+  padding: 15px 0;
+}
+
+.padding-bottom-15 {
+  padding-bottom: 15px;
+}
+
+.padding-left-10 {
+  padding-left: 10px;
+}
+
+.padding-left-15 {
+  padding-left: 15px;
+}
+
+.padding-left-50 {
+  padding-left: 50px;
+}
+
+.padding-right-10 {
+  padding-right: 10px;
+}
+
+.padding-right-15 {
+  padding-right: 15px;
+}
+
+.padding-right-50 {
+  padding-right: 50px;
+}
+
+.padding-top-15 {
+  padding-top: 15px;
+}
+
+.padding-top-150 {
+  padding-top: 150px;
+}
+
+.no-padding {
+  margin: 0 !important;
+}
+
+.no-padding-bottom {
+  padding-bottom: 0 !important;
+}
+
+.no-padding-left {
+  padding-left: 0 !important;
+}
+
+.no-padding-top {
+  padding-top: 0 !important;
+}
+
+.no-padding-right {
+  padding-right: 0 !important;
+}
+
+// ================
+// Widths
+// ================
+.width-25 {
+  width: 25%;
+}
+
+.width-50 {
+  width: 50%;
+}
+
+.width-60 {
+  width: 60%;
+}
+
+.width-75 {
+  width: 75%;
+}
+
+.width-100 {
+  width: 100%;
+}
+
+.width-100-important {
+  width: 100% !important;
+}
+
+// ================
+// Displays
+// ================
+.display-block {
+  display: block;
+}
+
+.display-none {
+  display: none;
+}
+
+.display-inline {
+  display: inline;
+}
+
+.display-inline-block {
+  display: inline-block;
+}
+
+// ================
+// Borders
+// ================
+.no-border {
+  border: 0 !important;
+}
+
+.no-border-bottom {
+  border-bottom: 0 !important;
+}
+
+.no-border-left {
+  border-left: 0 !important;
+}
+
+.no-border-top {
+  border-top: 0 !important;
+}
+
+.no-border-right {
+  border-right: 0 !important;
+}
+
+// ================
+// Auxiliary
+// ================
+.vertical-align-middle {
+  vertical-align: middle;
+}
+
+.no-background {
+  background: none !important;
+}
+
+.white-space-normal {
+  white-space: normal !important;
+}

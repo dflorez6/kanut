@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>
+    Kanut | Web App
+  </title>
+
+  <%# TODO: Update Metatags %>
+  <meta property="og:locale"        content="en_US" />
+  <meta property="og:type"          content="website" />
+  <meta property="og:title"         content="Kanut | Web App" />
+  <meta property="og:url"           content="<%= ENV['APP_URL'] %>">
+  <meta property="og:description"   content="Kanut | Web App" />
+  <meta property="og:site_name"     content="Kanut | Web App" />
+  <!-- <meta property="og:image"         content="http://bogotagraffiti.com/wp-content/uploads/2015/11/og-image.png"> -->
+
+  <meta name="twitter:card"         content="summary_large_image">
+  <meta name="twitter:title"        content="Kanut | Web App">
+  <meta name="twitter:site"         content="<%= ENV['APP_URL'] %>">
+  <!-- <meta name="twitter:image"        content="http://bogotagraffiti.com/wp-content/uploads/2015/11/og-image.png"> -->
+  <meta name="twitter:creator"      content="">
+
+
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+
+  <!-- MaterializeCSS Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"></script>
+
+  <!-- Select2 -->
+  <!--
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.9/css/select2.min.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.9/js/select2.full.min.js"></script>
+  -->
+
+  <!-- Owl Carousel -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+  <!-- JS External Libraries: Google Analytics -->
+  <%= render 'layouts/ga' %>
+</head>
+
+<body>
+<%= render 'layouts/gtm' %>
+<%= render 'layouts/facebook' %>
+<%= render 'layouts/twitter' %>
+<%= render partial: 'shared/flash', locals: { flash: flash } %>
+
+
+<header>
+  <%= render 'layouts/navbar/navbar' %>
+</header>
+
+
+<aside>
+  <%= render 'layouts/sidebar/sidebar' %>
+</aside>
+
+<main>
+  <%= yield %>
+</main>
+
+<footer>
+  <%= render 'layouts/footer/footer' %>
+</footer>
+
+<!-- TODO: Remove web console for production -->
+<%# console %>
+
+<script>
+    document.addEventListener("turbolinks:load", function() {
+        // $('.sidenav').sidenav();
+
+    });
+</script>
+
+<!-- JS External Libraries -->
+<%= render 'layouts/social_media' %>
+</body>
+</html>

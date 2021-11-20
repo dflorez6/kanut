@@ -1,0 +1,74 @@
+// ================
+// Flash Messages
+// ================
+// TODO: Correct flash messages colors
+.alert {
+  height: 100px;
+  margin-bottom: 0;
+  padding: 34px 0;
+  position: absolute;
+  width: 100%;
+  z-index: 10000;
+
+  .close {
+    font-size: 1.5em;
+    font-weight: $f-normal;
+    line-height: 0;
+    margin-right: 10px;
+    opacity: 0.5;
+    text-shadow: none;
+  }
+
+  .close:hover, .close:focus, .close:active {
+    opacity: 1;
+  }
+
+}
+
+.alert-danger {
+  background-color: $c-red;
+  border: 0;
+  border-radius: 0;
+  color: $c-white;
+  //font-size: 2em;
+  font-weight: bold;
+
+  .close {
+    color: $c-white;
+    opacity: 0.5;
+  }
+
+  .close:hover, .close:focus, .close:active {
+    color: $c-white;
+    opacity: 1;
+  }
+
+}
+
+.alert-warning {
+  background-color: orange;
+  border: 0;
+  border-radius: 0;
+  color: $c-black;
+  //font-size: 2em;
+  font-weight: bold;
+  a {
+    i {
+      color: $c-black;
+    }
+  }
+}
+
+.alert-success {
+  background-color: $c-green;
+  border: 0;
+  border-radius: 0;
+  color: $c-white;
+  //font-size: 2em;
+  font-weight: bold;
+  a {
+    svg {
+      color: $c-white;
+    }
+  }
+}

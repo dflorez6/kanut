@@ -1,0 +1,54 @@
+// ==========================
+// Materialize CSS
+// ==========================
+@import "~materialize-css/dist/css/materialize";
+
+//================
+// Variables
+//================
+// Nav
+$h-nav: 92px;
+
+// ==========================
+// Import core styles
+// ==========================
+@import "core/colors";
+@import "core/fonts";
+@import "core/utilities";
+@import "core/general";
+
+// ==========================
+// UI Components
+// ==========================
+@import "components/flash_messages";
+@import "components/layouts";
+@import "components/buttons";
+@import "components/navbar";
+@import "components/sidebar";
+@import "components/footer";
+@import "components/form";
+@import "components/table";
+@import "components/modal";
+@import "components/cards";
+@import "components/pagination";
+@import "components/select2";
+
+// ==========================
+// Import other stylesheets
+// ==========================
+// Admin
+@import "styles/devise";
+
+// Dashboard
+@import "styles/dashboard";
+
+// Static Pages
+@import "styles/static_pages";
+
+// Resources
+
+
+// ==========================
+// Responsive
+// ==========================
+@import "responsive/responsive";

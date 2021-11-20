@@ -1,0 +1,32 @@
+// ================
+// General
+// ================
+body {
+  color: $c-text-primary;
+  font-family: $f-roboto;
+  font-size: $f-p;
+}
+
+a {
+  -webkit-transition: all 250ms ease-out;
+  -moz-transition: all 250ms ease-out;
+  -o-transition: all 250ms ease-out;
+  transition: all 250ms ease-out;
+}
+
+a:hover,
+a:focus,
+a:active {
+  -webkit-transition: all 250ms ease-out;
+  -moz-transition: all 250ms ease-out;
+  -o-transition: all 250ms ease-out;
+  transition: all 250ms ease-out;
+}
+
+.navbar-padding {
+  padding-top: $h-nav;
+}
+
+strong {
+  font-weight: $f-bold;
+}

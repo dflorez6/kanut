@@ -1,0 +1,32 @@
+<% unless flash.empty? %>
+    <!-- Modal Structure -->
+    <% flash.each do |key, value| %>
+        <div id="modal1" class="modal modal-aeth flash-modal <%= " #{alert_class(key)} flash-messages" %>">
+          <div class="modal-content">
+            <div class="row no-margin">
+
+              <div class="col s12 aeth-alert-content">
+                <h4>
+                  <%= value %>
+                </h4>
+
+                <div class="aeth-alert-close-icon">
+                  <a class="modal-action modal-close btn-flat-no-background"> <!-- href="#!" -->
+                    <i class="fas fa-times"></i>
+                  </a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+    <% end %>
+
+    <script>
+        $(document).on('turbolinks:load', function() {
+            // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
+            $('#modal1').modal();
+            $('#modal1').modal('open');
+        });
+    </script>
+<% end %>
