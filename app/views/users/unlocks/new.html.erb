@@ -1,0 +1,81 @@
+<section class="devise-wrapper">
+  <div class="container">
+
+    <!-- Title --->
+    <div class="devise-title">
+      <div class="row">
+        <div class="col s12 m6 l6 offset-m3 offset-l3">
+          <h1>
+            <% if I18n.locale == :es %>
+              Reenviar instrucciones de desbloqueo
+            <% else %>
+              Resend unlock instructions
+            <% end %>
+          </h1>
+        </div>
+      </div>
+    </div>
+    <!-- ./Title --->
+
+    <!-- Content --->
+    <div class="devise-content">
+      <div class="row">
+        <div class="col s12 m6 l6 offset-m3 offset-l3">
+
+          <div class="row">
+            <div class="col s12">
+              <%= form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f| %>
+                <%= render "users/shared/error_messages", resource: resource %>
+
+                <div class="row">
+                  <div class="col s12">
+                    <div class="input-field">
+                      <% if I18n.locale == :es %>
+                        <%= f.label :email, 'Correo Electrónico' %><br />
+                      <% else %>
+                        <%= f.label :email %><br />
+                      <% end %>
+                      <%= f.email_field :email, id: :email, autofocus: true, class: 'validate' %>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="center-align btn-wrapper">
+                  <!-- Large Screens -->
+                  <div class="hide-on-small-only">
+                    <% if I18n.locale ==  :es %>
+                      <%= f.submit 'Reestablecer Contraseña', class: 'btn btn-small btn-bgt width-75' %>
+                    <% else %>
+                      <%= f.submit 'Reset Password', class: 'btn btn-small btn-bgt width-75' %>
+                    <% end %>
+                  </div>
+                  <!-- ./Large Screens -->
+
+                  <!-- Small Screens -->
+                  <div class="hide-on-med-and-up">
+                    <% if I18n.locale ==  :es %>
+                      <%= f.submit 'Reenviar instrucciones', class: 'btn btn-small btn-bgt width-100-percent' %>
+                    <% else %>
+                      <%= f.submit 'Resend instructions', class: 'btn btn-small btn-bgt width-100-percent' %>
+                    <% end %>
+                  </div>
+                  <!-- ./Small Screens -->
+                </div>
+
+              <% end %>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col s12 center-align">
+              <%= render "users/shared/links" %>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <!-- ./Content --->
+
+  </div>
+</section>
