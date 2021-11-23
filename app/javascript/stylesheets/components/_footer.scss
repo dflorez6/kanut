@@ -1,0 +1,61 @@
+// ================
+// Footer
+// ================
+footer {
+  background-color: $c-text-primary;
+  color: $c-white;
+  padding: 2rem;
+
+  .footer-content-wrapper {
+    display: flex;
+    flex-direction: column;
+
+    // Social
+    .footer-social-wrapper {
+      display: flex;
+      margin: 0 0 2rem;
+      justify-content: center;
+
+      .social-icon-wrapper {
+        margin: 0 0.75rem;
+
+        .social-icon {
+          align-items: center;
+          background: $c-white;
+          border-radius: 50%;
+          color: $c-text-primary;
+          display: flex;
+          font-size: 1.5rem;
+          height: 40px;
+          justify-content: center;
+          width: 40px;
+        }
+
+        .social-icon:hover,
+        .social-icon:active,
+        .social-icon:focus {
+          background: $c-red;
+          color: $c-white;
+        }
+
+      }
+
+    }
+
+    // Navigation
+    .footer-navigation-wrapper {
+      margin: 0 0 2rem;
+    }
+
+    // Newsletter
+    .footer-subscription-wrapper {
+      margin: 0 0 2rem;
+    }
+
+  }
+
+  .footer-copyright-wrapper {
+
+  }
+
+}
