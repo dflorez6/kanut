@@ -6,10 +6,10 @@
       <div class="row">
         <div class="col s12 m6 l6 offset-m3 offset-l3">
           <h1>
-            <% if I18n.locale == :es %>
-              Selecciona tu contraseña
-            <% else %>
+            <% if I18n.locale == :en %>
               Change your password
+            <% else %>
+              Selecciona tu contraseña
             <% end %>
           </h1>
         </div>
@@ -29,19 +29,19 @@
                 <%= f.hidden_field :reset_password_token %>
 
                 <div class="input-field">
-                  <% if I18n.locale == :es %>
-                    <%= f.label :password, 'Contraseña (6 caracteres mínimo)' %><br />
-                  <% else %>
+                  <% if I18n.locale == :en %>
                     <%= f.label :password, 'Password (6 characters minimum)' %><br />
+                  <% else %>
+                    <%= f.label :password, 'Contraseña (6 caracteres mínimo)' %><br />
                   <% end %>
                   <%= f.password_field :password, id: :password, class: 'validate', autofocus: true, autocomplete: 'off' %>
                 </div>
 
                 <div class="input-field">
-                  <% if I18n.locale == :es %>
-                    <%= f.label :password_confirmation, 'Confirmar Contraseña' %><br />
-                  <% else %>
+                  <% if I18n.locale == :en %>
                     <%= f.label :password_confirmation %><br />
+                  <% else %>
+                    <%= f.label :password_confirmation, 'Confirmar Contraseña' %><br />
                   <% end %>
                   <%= f.password_field :password_confirmation, id: :password_confirmation, class: 'validate', autocomplete: 'off' %>
                 </div>
@@ -49,20 +49,20 @@
                 <div class="center-align btn-wrapper">
                   <!-- Large Screens -->
                   <div class="hide-on-small-only">
-                    <% if I18n.locale ==  :es %>
-                      <%= f.submit 'Guardar', class: 'btn btn-large btn-bgt width-100' %>
-                    <% else %>
+                    <% if I18n.locale ==  :en %>
                       <%= f.submit 'Save', class: 'btn btn-large btn-bgt width-100' %>
+                    <% else %>
+                      <%= f.submit 'Guardar', class: 'btn btn-large btn-bgt width-100' %>
                     <% end %>
                   </div>
                   <!-- ./Large Screens -->
 
                   <!-- Small Screens -->
                   <div class="hide-on-med-and-up">
-                    <% if I18n.locale ==  :es %>
-                      <%= f.submit 'Guardar', class: 'btn btn-small btn-bgt width-100-percent' %>
-                    <% else %>
+                    <% if I18n.locale ==  :en %>
                       <%= f.submit 'Save', class: 'btn btn-small btn-bgt width-100-percent' %>
+                    <% else %>
+                      <%= f.submit 'Guardar', class: 'btn btn-small btn-bgt width-100-percent' %>
                     <% end %>
                   </div>
                   <!-- ./Small Screens -->

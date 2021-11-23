@@ -1,0 +1,59 @@
+// ================
+// Basic Modal
+// ================
+.modal-app {
+  top: 0 !important;
+
+  h4 {
+    font-weight: $f-normal;
+    margin: 0;
+  }
+
+  .aeth-alert-close-icon {
+    a {
+      i {
+        font-size: 2.5em;
+      }
+    }
+  }
+
+}
+
+// ================
+// Flash Alerts Modal
+// ================
+.modal-app {
+  &.flash-modal {
+    width: 100%;
+
+    .modal-content {
+      padding: 1.5rem;
+    }
+
+    .aeth-alert-content {
+      position: relative;
+
+      h3 {
+        font-weight: $f-normal;
+      }
+
+      .aeth-alert-close-icon {
+        position: absolute;
+        right: 0;
+        top: -5px;
+
+        a {
+          color: $c-white;
+          font-size: 1.5em;
+          i {
+            vertical-align: middle;
+          }
+        }
+
+      }
+
+    }
+
+  }
+}
+

@@ -1,0 +1,12 @@
+<% if user_signed_in? %>
+  <%= render 'layouts/sidebar/sidebar_user' %>
+<% else %>
+  <%= render 'layouts/sidebar/sidebar_admin' %>
+<% end %>
+
+
+<script>
+    $(document).on('turbolinks:load', function() {
+
+    });
+</script>

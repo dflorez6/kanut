@@ -1,8 +1,10 @@
 <%- if controller_name != 'sessions' %>
   <% if I18n.locale ==  :es %>
-    <%= link_to 'Ingresar', new_session_path(resource_name) %><br />
+    <%#= link_to 'Ingresar', new_session_path(resource_name) %><br />
+    <%= link_to 'Ingresar', login_path %><br />
   <% else %>
-    <%= link_to 'Log in', new_session_path(resource_name) %><br />
+    <%#= link_to 'Log in', new_session_path(resource_name) %><br />
+    <%= link_to 'Log In', login_path %><br />
   <% end %>
 <% end -%>
 

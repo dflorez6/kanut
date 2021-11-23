@@ -16,7 +16,7 @@ class User < ApplicationRecord
   #====================
   # Scopes
   #====================
-  default_scope { order(last_name: :asc) }
+  default_scope { order(email: :asc) }
 
   #====================
   # Methods

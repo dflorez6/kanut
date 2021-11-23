@@ -1,21 +1,17 @@
-<!-- Dropdown Structure -->
-<ul id="dropdown1" class="dropdown-content">
-  <li><a href="#!">one</a></li>
-  <li><a href="#!">two</a></li>
-  <li class="divider"></li>
-  <li><a href="#!">three</a></li>
-</ul>
-
-<div class="navbar-fixed">
-  <nav>
-    <div class="nav-wrapper">
-      <a href="#!" class="brand-logo">Logo</a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="sass.html">Sass</a></li>
-        <li><a href="badges.html">Components</a></li>
-        <!-- Dropdown Trigger -->
-        <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>
-      </ul>
-    </div>
-  </nav>
+<!-- Mobile -->
+<div class="show-on-small hide-on-med-and-up">
+  <%= render 'layouts/navbar/navbar_mobile' %>
 </div>
+<!-- ./Mobile -->
+
+<!-- Tablet -->
+<div class="show-on-medium hide-on-large-only hide-on-small-only">
+  <%= render 'layouts/navbar/navbar_tablet' %>
+</div>
+<!-- ./Tablet -->
+
+<!-- Desktop -->
+<div class="show-on-large hide-on-med-and-down">
+  <%= render 'layouts/navbar/navbar_desktop' %>
+</div>
+<!-- ./Desktop -->
