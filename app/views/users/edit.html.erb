@@ -1,6 +1,40 @@
-<h1>Editing User</h1>
+<section class="page-wrapper private-wrapper new-wrapper">
+  <div class="container-app">
 
-<%= render 'form', user: @user %>
+    <!-- Title -->
+    <div class="title">
+      <div class="row">
+        <div class="col s12 m12 l12">
+          <h1>
+            <% if I18n.locale == :en %>
+              Edit user
+            <% else %>
+              Editar usuario
+            <% end %>
+          </h1>
+        </div>
+      </div>
+    </div>
+    <!-- ./Title -->
 
-<%= link_to 'Show', @user %> |
-<%= link_to 'Back', users_path %>
+    <!-- Content -->
+    <div class="content">
+      <div class="row">
+        <div class="col s12 m12 l12">
+          <div class="form-wrapper">
+            <%= render 'form', user: @user %>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col s12 m12 l12 center-align">
+          <%= link_to 'Show', @user %> |
+          <%= link_to 'Back', users_path %>
+        </div>
+      </div>
+    </div>
+    <!-- ./Content -->
+
+  </div>
+</section>

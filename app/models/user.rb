@@ -8,7 +8,6 @@ class User < ApplicationRecord
   # Validations
   #====================
 
-
   #====================
   # Associations
   #====================

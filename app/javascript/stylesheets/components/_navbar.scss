@@ -27,7 +27,7 @@
     margin-left: 2rem;
     text-align: right;
 
-    ul {
+    .navbar-links-wrapper {
       display: flex;
 
       li {
@@ -52,7 +52,8 @@
 
       // Language selection (link)
       .language-selection {
-        margin-left: 2rem;
+        margin-left: 1.5rem;
+
         a {
           // Caret
           i {

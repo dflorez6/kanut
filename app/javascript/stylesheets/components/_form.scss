@@ -1,0 +1,42 @@
+//=================
+// Form
+//=================
+.form-wrapper {
+
+  // Input Group
+  .input-field {
+
+    label {
+      padding-left: 1rem;
+      padding-right: 1rem;
+
+      &.active {
+        color: $c-text-primary;
+        top: -10px !important;
+      }
+    }
+
+    // Input
+    input,
+    textarea {
+      background: $c-gray-input;
+      box-sizing: border-box;
+      font-size: 1.25rem;
+      margin: 0;
+      outline: none;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    // Textarea
+    .materialize-textarea {
+      min-height: 150px;
+    }
+
+  }
+
+  .form-actions {
+    margin-top: 10px;
+  }
+
+}
