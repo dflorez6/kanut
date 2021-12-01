@@ -17,6 +17,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+    @user.name = update_full_name
 
     respond_to do |format|
       if @user.save
@@ -30,6 +31,8 @@ class UsersController < ApplicationController
   end
 
   def update
+    @user.name = update_full_name
+
     respond_to do |format|
       if @user.update(user_params)
         format.html { redirect_to @user, notice: "User was successfully updated." }
@@ -52,7 +55,9 @@ class UsersController < ApplicationController
   #==============
   # Custom Methods
   #==============
-
+  def update_full_name
+    params[:user][:first_name] + ' ' + params[:user][:last_name]
+  end
 
   #==============
   # Private Methods
@@ -65,6 +70,6 @@ class UsersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def user_params
-      params.require(:user).permit(:name)
+      params.require(:user).permit(:name, :first_name, :last_name, :email, :password, :password_confirmation)
     end
 end

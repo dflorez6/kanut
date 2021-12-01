@@ -1,0 +1,117 @@
+<section class="devise-wrapper">
+  <div class="container">
+
+    <!-- Title --->
+    <div class="devise-title">
+      <div class="row">
+        <div class="col s12 m12 l12">
+          <h1>
+            <% if I18n.locale == :en %>
+              Organization Sign up
+            <% else %>
+              Registro de Organización
+            <% end %>
+          </h1>
+        </div>
+      </div>
+    </div>
+    <!-- ./Title --->
+
+    <!-- Content --->
+    <div class="devise-content">
+      <div class="row">
+        <div class="col s12 m12 l12">
+
+          <div class="row no-margin-bottom">
+            <div class="col s12">
+              <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: 'form-wrapper' }) do |f| %>
+                <%= render "organizations/shared/error_messages", resource: resource %>
+
+                <div class="row">
+                  <div class="col s12 m6 l6">
+                    <div class="input-field">
+                      <% if I18n.locale == :en %>
+                        <%= f.label :email %>
+                      <% else %>
+                        <%= f.label :email, 'Correo Electrónico' %>
+                      <% end %>
+                      <%= f.email_field :email, id: :email, autofocus: true, class: 'validate' %>
+                    </div>
+                  </div>
+
+                  <div class="col s12 m6 l6">
+                    <div class="input-field">
+                      <% if I18n.locale == :en %>
+                        <%= f.label :name, 'Organization Name' %>
+                      <% else %>
+                        <%= f.label :name, 'Nombre de la organización' %>
+                      <% end %>
+                      <%= f.text_field :name, id: :name, class: 'validate' %>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col s12 m6 l6">
+                    <div class="input-field">
+                      <% if I18n.locale == :en %>
+                        <%= f.label :password, 'Password (6 characters minimum)' %>
+                      <% else %>
+                        <%= f.label :password, 'Contraseña (6 caracteres mínimo)' %>
+                      <% end %>
+                      <%= f.password_field :password, id: :password, class: 'validate', autocomplete: 'off' %>
+                    </div>
+                  </div>
+
+                  <div class="col s12 m6 l6">
+                    <div class="input-field">
+                      <% if I18n.locale == :en %>
+                        <%= f.label :password_confirmation %>
+                      <% else %>
+                        <%= f.label :password_confirmation, 'Confirmar Contraseña' %>
+                      <% end %>
+                      <%= f.password_field :password_confirmation, id: :password_confirmation, class: 'validate', autocomplete: 'off' %>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="center-align btn-wrapper">
+                  <!-- Large Screens -->
+                  <div class="hide-on-small-only">
+                    <% if I18n.locale ==  :en %>
+                      <%= f.submit 'Sign up', class: 'btn btn-large btn-bgt width-50' %>
+                    <% else %>
+                      <%= f.submit 'Registrarse', class: 'btn btn-large btn-bgt width-50' %>
+                    <% end %>
+                  </div>
+                  <!-- ./Large Screens -->
+
+                  <!-- Small Screens -->
+                  <div class="hide-on-med-and-up">
+                    <% if I18n.locale ==  :en %>
+                      <%= f.submit 'Sign up', class: 'btn btn-large btn-bgt width-100-percent' %>
+                    <% else %>
+                      <%= f.submit 'Registrarse', class: 'btn btn-large btn-bgt width-100-percent' %>
+                    <% end %>
+                  </div>
+                  <!-- ./Small Screens -->
+                </div>
+
+              <% end %>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col s12 center-align">
+              <%= render "organizations/shared/links" %>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <!-- ./Content --->
+
+  </div>
+</section>

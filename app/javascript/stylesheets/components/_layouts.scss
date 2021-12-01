@@ -1,0 +1,59 @@
+// ================
+// General
+// ================
+.container-app {
+  padding: 0 5rem;
+  width: 100%;
+}
+
+.page-wrapper {
+  margin-top: $h-nav;
+  min-height: calc(100vh - 56px); // $h-nav
+}
+
+// ================
+// Wrappers
+// ================
+.private-wrapper {
+
+  // Index
+  &.index-wrapper {
+    padding: 3.5rem 0 7rem;
+  }
+
+  // New / Edit
+  &.new-wrapper {
+    padding: 3.5rem 0 7rem;
+  }
+
+  // Show
+  &.show-wrapper {
+    padding: 2rem 0 7rem;
+  }
+
+}
+
+// ================
+// Title
+// ================
+.title {
+  h1 {
+
+  }
+}
+
+// ================
+// Subtitle
+// ================
+.subtitle {
+  h2 {
+
+  }
+}
+
+// ================
+// Content
+// ================
+.content {
+
+}

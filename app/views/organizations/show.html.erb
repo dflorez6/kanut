@@ -1,0 +1,23 @@
+<section class="page-wrapper private-wrapper show-wrapper">
+  <div class="container-app">
+
+    <p>
+      <strong>Logo:</strong>
+      <%#= @user.image %>
+    </p>
+
+    <p>
+      <strong>Name:</strong>
+      <%= @organization.name %>
+    </p>
+
+    <p>
+      <strong>Email:</strong>
+      <%= @organization.email %>
+    </p>
+
+    <%= link_to 'Edit', edit_organization_path(@organization) %> |
+    <%= link_to 'Back', organizations_path %>
+
+  </div>
+</section>
