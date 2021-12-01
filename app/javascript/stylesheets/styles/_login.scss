@@ -1,0 +1,59 @@
+// ================
+// Login
+// ================
+.page-wrapper {
+  &.login-wrapper {
+    display: flex;
+    align-items: center;
+
+    // Login
+    .login-container-flex {
+      display: flex;
+
+      // Content
+      .login-container {
+        color: $c-white;
+        padding: 4rem 2rem;
+        width: 50%;
+
+        // User
+        &.user-wrapper {
+          background: $c-text-primary;
+        }
+
+        // Organization
+        &.organization-wrapper {
+          background: $c-text-secondary;
+        }
+
+        h2 {
+          font-size: 1.5rem;
+          font-weight: $f-normal;
+          margin: 0 0 2rem;
+        }
+
+        p {
+          font-weight: $f-light;
+          margin: 0;
+        }
+
+        // Button / Actions
+        .login-actions {
+          display: flex;
+          justify-content: center;
+          margin: 3rem 0 0;
+          text-align: center;
+
+          a {
+            font-weight: $f-bold;
+            width: 50%;
+          }
+        }
+
+      }
+
+    }
+
+
+  }
+}

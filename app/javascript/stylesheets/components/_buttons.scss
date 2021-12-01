@@ -1,0 +1,64 @@
+// =====================
+// Buttons
+// =====================
+.btn-app {
+  border: 0;
+  border-radius: 2.5px;
+  box-shadow: none;
+  cursor: pointer;
+  font-weight: $f-normal;
+  min-height: 45px;
+  line-height: 45px;
+  opacity: 0.85;
+  text-transform: capitalize;
+
+  -webkit-transition: all 250ms ease-out;
+  -moz-transition: all 250ms ease-out;
+  -o-transition: all 250ms ease-out;
+  transition: all 250ms ease-out;
+}
+
+.btn-app:hover,
+.btn-app:focus,
+.btn-app:active {
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  opacity: 1;
+
+  -webkit-transition: all 250ms ease-out;
+  -moz-transition: all 250ms ease-out;
+  -o-transition: all 250ms ease-out;
+  transition: all 250ms ease-out;
+}
+
+// Colored Buttons
+.btn-app {
+
+  // Dark
+  &.btn-app-dark {
+    background-color: $c-text-primary;
+    color: $c-white;
+  }
+
+  &.btn-app-dark:hover,
+  .btn-app-dark:focus,
+  .btn-app-dark:active {
+    background-color: $c-text-primary;
+    color: $c-white;
+  }
+
+  // Red
+  &.btn-app-red {
+    background-color: $c-red;
+    color: $c-white;
+  }
+
+  &.btn-app-red:hover,
+  .btn-app-red:focus,
+  .btn-app-red:active {
+    background-color: $c-red;
+    color: $c-white;
+  }
+
+}

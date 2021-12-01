@@ -1,0 +1,143 @@
+<div class="navbar-wrapper">
+
+  <div class="navbar-logo-wrapper">
+    <% if I18n.locale == :en %>
+      <%= link_to root_path(locale: 'en'), class: 'brand-logo-text' do %>
+        <%= image_tag 'logo.png', alt: 'Kanut Logo', class: 'navbar-logo', id: 'navbarLogo' %>
+      <% end %>
+    <% else %>
+      <%= link_to root_path(locale: 'es'), class: 'brand-logo-text' do %>
+        <%= image_tag 'logo.png', alt: 'Kanut Logo', class: 'navbar-logo', id: 'navbarLogo' %>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div class="navbar-content-wrapper">
+    <ul class="">
+      <% if user_signed_in? %>
+        <!-- User -->
+        <li class="">
+          <% if I18n.locale == :en %>
+            <%= link_to 'Dashboard', root_path(locale: 'en') %>
+          <% else %>
+            <%= link_to 'Dashboard', root_path(locale: 'es') %>
+          <% end %>
+        </li>
+
+
+        <li class="admin-options">
+          <a href="#" data-target="slide-out" class="sidenav-trigger sidenav-trigger-admin">
+            <i class="fas fa-bars"></i>
+          </a>
+        </li>
+        <li class="">
+          <%= link_to destroy_user_session_path, method: :delete, class: '' do %>
+            <i class="fas fa-sign-out-alt"></i>
+          <% end %>
+        </li>
+        <!-- ./User -->
+      <% elsif organization_signed_in? %>
+        <!-- Organization -->
+        <li class="">
+          <% if I18n.locale == :en %>
+            <%= link_to 'Home', root_path(locale: 'en') %>
+          <% else %>
+            <%= link_to 'Inicio', root_path(locale: 'es') %>
+          <% end %>
+        </li>
+
+
+        <li class="admin-options">
+          <a href="#" data-target="slide-out" class="sidenav-trigger sidenav-trigger-admin">
+            <i class="fas fa-bars"></i>
+          </a>
+        </li>
+        <li class="">
+          <%= link_to destroy_organization_session_path, method: :delete, class: '' do %>
+            <i class="fas fa-sign-out-alt"></i>
+          <% end %>
+        </li>
+        <!-- ./Organization -->
+      <% else %>
+        <!-- Public -->
+        <li class="">
+          <% if I18n.locale == :en %>
+            <%= link_to 'Home', root_path(locale: 'en') %>
+          <% else %>
+            <%= link_to 'Inicio', root_path(locale: 'es') %>
+          <% end %>
+        </li>
+
+        <li class="">
+          <% if I18n.locale == :en %>
+            <%= link_to 'Features', root_path(locale: 'en') %>
+          <% else %>
+            <%= link_to 'Producto', root_path(locale: 'es') %>
+          <% end %>
+        </li>
+
+        <li class="">
+          <% if I18n.locale == :en %>
+            <%= link_to 'Pricing', root_path(locale: 'en') %>
+          <% else %>
+            <%= link_to 'Precio', root_path(locale: 'es') %>
+          <% end %>
+        </li>
+
+        <li class="">
+          <% if I18n.locale == :en %>
+            <%= link_to 'Contact', root_path(locale: 'en') %>
+          <% else %>
+            <%= link_to 'Contacto', root_path(locale: 'es') %>
+          <% end %>
+        </li>
+
+        <li class="">
+          <% if I18n.locale == :en %>
+            <%= link_to login_path(locale: 'en') do %>
+              <i class="fas fa-sign-in-alt"></i>
+            <% end %>
+          <% else %>
+            <%= link_to login_path(locale: 'es') do %>
+              <i class="fas fa-sign-in-alt"></i>
+            <% end %>
+          <% end %>
+        </li>
+        <!-- ./Public -->
+      <% end %>
+
+
+
+      <!-- Language Dropdown -->
+      <li class="language-selection">
+        <a class="dropdown-trigger" href="#!" data-target="languageDropdown">
+          <i class="fas fa-globe-americas"></i>
+          <i class="material-icons right">arrow_drop_down</i>
+        </a>
+      </li>
+      <ul id="languageDropdown" class="dropdown-content">
+        <li>
+          <!-- root_path(locale: 'es') -->
+          <%#TODO: Change Language & Redirect To Same Page  %>
+          <% if I18n.locale == :en %>
+            <%= link_to 'Spanish', url_for( params.clone.permit!.merge(locale: 'es', only_path: true)) %>
+          <% else %>
+            <%= link_to 'Español', url_for( params.clone.permit!.merge(locale: 'es', only_path: true)) %>
+          <% end %>
+        </li>
+        <li>
+          <!-- root_path(locale: 'en') -->
+          <% if I18n.locale == :en %>
+            <%= link_to 'English', url_for( params.clone.permit!.merge(locale: 'en', only_path: true)) %>
+          <% else %>
+            <%= link_to 'Inglés', url_for( params.clone.permit!.merge(locale: 'en', only_path: true)) %>
+          <% end %>
+        </li>
+      </ul>
+      <!-- ./Language Dropdown -->
+
+    </ul>
+
+  </div>
+
+</div>

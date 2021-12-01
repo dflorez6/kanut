@@ -1,0 +1,59 @@
+<section class="page-wrapper login-wrapper">
+  <div class="container-app">
+
+    <div class="login-container-flex">
+      <div class="login-container user-wrapper">
+        <h2>
+          <% if I18n.locale == :en %>
+            User
+          <% else %>
+            Usuario
+          <% end %>
+        </h2>
+
+        <p>
+          <% if I18n.locale == :en %>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
+          <% else %>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
+          <% end %>
+        </p>
+
+        <div class="login-actions">
+          <% if I18n.locale == :en %>
+            <%= link_to 'Log In', user_login_path, class: 'btn-app btn-app-red' %>
+          <% else %>
+            <%= link_to 'Log In', user_login_path, class: 'btn-app btn-app-red' %>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="login-container organization-wrapper">
+        <h2>
+          <% if I18n.locale == :en %>
+            Organization
+          <% else %>
+            Organización
+          <% end %>
+        </h2>
+
+        <p>
+          <% if I18n.locale == :en %>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
+          <% else %>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
+          <% end %>
+        </p>
+
+        <div class="login-actions">
+          <% if I18n.locale == :en %>
+            <%= link_to 'Log In', organization_login_path, class: 'btn-app btn-app-dark' %>
+          <% else %>
+            <%= link_to 'Log In', organization_login_path, class: 'btn-app btn-app-dark' %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
