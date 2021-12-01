@@ -14,19 +14,50 @@
 
   <div class="navbar-content-wrapper">
     <ul class="">
-      <% if  user_signed_in?%>
-        <!-- Private -->
+      <% if user_signed_in? %>
+        <!-- User -->
+        <li class="">
+          <% if I18n.locale == :en %>
+            <%= link_to 'Dashboard', root_path(locale: 'en') %>
+          <% else %>
+            <%= link_to 'Dashboard', root_path(locale: 'es') %>
+          <% end %>
+        </li>
+
+
+        <li class="admin-options">
+          <a href="#" data-target="slide-out" class="sidenav-trigger sidenav-trigger-admin">
+            <i class="fas fa-bars"></i>
+          </a>
+        </li>
         <li class="">
           <%= link_to destroy_user_session_path, method: :delete, class: '' do %>
             <i class="fas fa-sign-out-alt"></i>
-            <% if I18n.locale == :en %>
-              Log out
-            <% else %>
-              Salir
-            <% end %>
           <% end %>
         </li>
-        <!-- ./Private -->
+        <!-- ./User -->
+      <% elsif organization_signed_in? %>
+        <!-- Organization -->
+        <li class="">
+          <% if I18n.locale == :en %>
+            <%= link_to 'Home', root_path(locale: 'en') %>
+          <% else %>
+            <%= link_to 'Inicio', root_path(locale: 'es') %>
+          <% end %>
+        </li>
+
+
+        <li class="admin-options">
+          <a href="#" data-target="slide-out" class="sidenav-trigger sidenav-trigger-admin">
+            <i class="fas fa-bars"></i>
+          </a>
+        </li>
+        <li class="">
+          <%= link_to destroy_organization_session_path, method: :delete, class: '' do %>
+            <i class="fas fa-sign-out-alt"></i>
+          <% end %>
+        </li>
+        <!-- ./Organization -->
       <% else %>
         <!-- Public -->
         <li class="">

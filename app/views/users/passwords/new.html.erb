@@ -32,9 +32,9 @@
                   <div class="col s12">
                     <div class="input-field">
                       <% if I18n.locale == :en %>
-                        <%= f.label :email %><br />
+                        <%= f.label :email %>
                       <% else %>
-                        <%= f.label :email, 'Correo Electrónico' %><br />
+                        <%= f.label :email, 'Correo Electrónico' %>
                       <% end %>
                       <%= f.email_field :email, id: :email, autofocus: true, class: 'validate' %>
                     </div>

@@ -1,0 +1,74 @@
+<%= form_with(model: organization) do |form| %>
+  <% if organization.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(organization.errors.count, "error") %> prohibited this organization from being saved:</h2>
+
+      <ul>
+        <% organization.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <div class="col s12 m6 l6">
+      <div class="input-field">
+        <% if I18n.locale == :en %>
+          <%= form.label :email, 'E-mail' %>
+        <% else %>
+          <%= form.label :email, 'Correo electrónico' %>
+        <% end %>
+        <%= form.email_field :email %>
+      </div>
+    </div>
+
+    <div class="col s12 m6 l6">
+      <div class="input-field">
+        <% if I18n.locale == :en %>
+          <%= form.label :name, 'Organization Name' %>
+        <% else %>
+          <%= form.label :name, 'Nombre de la organización' %>
+        <% end %>
+        <%= form.text_field :name %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col s12 m6 l6">
+      <div class="input-field">
+        <% if I18n.locale == :en %>
+          <%= form.label :password, 'Password' %>
+        <% else %>
+          <%= form.label :password, 'Contraseña' %>
+        <% end %>
+        <%= form.password_field :password %>
+      </div>
+    </div>
+
+    <div class="col s12 m6 l6">
+      <div class="input-field">
+        <% if I18n.locale == :en %>
+          <%= form.label :password_confirmation, 'Password Confirmation' %>
+        <% else %>
+          <%= form.label :password_confirmation, 'Confirmar contraseña' %>
+        <% end %>
+        <%= form.password_field :password_confirmation %>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Submit -->
+  <div class="row">
+    <div class="col s12 m6 offset-m3 l4 offset-l4 center-align form-actions">
+      <% if I18n.locale == :es %>
+        <%= form.submit 'Guardar', class: 'btn-app btn-app-dark width-100' %>
+      <% else %>
+        <%= form.submit 'Save', class: 'btn-app btn-app-dark width-100' %>
+      <% end %>
+    </div>
+  </div>
+  <!-- ./Submit -->
+<% end %>

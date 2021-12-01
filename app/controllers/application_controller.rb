@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
 
   # Permit other parameters for devise
   # TODO: Uncomment to permit Devise Additional Fields for Sign Up
-  # before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :configure_permitted_parameters, if: :devise_controller?
 
   #==============
   # Protected Methods

@@ -1,5 +1,7 @@
 <% if user_signed_in? %>
   <%= render 'layouts/sidebar/sidebar_user' %>
+<% elsif organization_signed_in? %>
+  <%= render 'layouts/sidebar/sidebar_organization' %>
 <% else %>
   <%= render 'layouts/sidebar/sidebar_admin' %>
 <% end %>

@@ -1,0 +1,157 @@
+<ul id="slide-out" class="sidenav sidenav-aeth">
+  <!-- Header -->
+  <li>
+    <div class="user-view sidenav-aeth-header">
+      <div class="background">
+        <%= image_tag 'sidenav_bg_01.jpg', alt: '', class: '' %>
+      </div>
+
+      <div class="user-img">
+        <a href="#user">
+          <%= image_tag 'customer_placeholder_square.jpg', alt: "", class: 'circle' %>
+          <%# if current_user.images.blank? %>
+          <%#= image_tag 'customer_placeholder_square.jpg', alt: "", class: 'circle' %>
+          <%# else %>
+          <%#= image_tag current_user.images.last.image.url, alt: "", class: 'circle' %>
+          <%# end %>
+        </a>
+      </div>
+
+      <div class="user-info">
+        <a href="#name">
+          <span class="name">
+            <% if current_organization.name.blank? %>
+              Name Missing
+            <% else %>
+              <%= current_organization.name %>
+            <% end %>
+          </span>
+        </a>
+
+        <a href="#email">
+          <span class="email">
+            <% if current_organization.email.blank? %>
+              Email Missing
+            <% else %>
+              <%= current_organization.email %>
+            <% end %>
+          </span>
+        </a>
+      </div>
+
+    </div>
+  </li>
+  <!-- ./Header -->
+
+
+  <!-- Section -->
+  <li>
+    <a class="subheader">
+      <% if I18n.locale == :en %>
+        Section
+      <% else %>
+        Sección
+      <% end %>
+    </a>
+  </li>
+
+
+  <li>
+    <%= link_to root_path, class: '' do %>
+      <i class="far fa-calendar-alt"></i>
+      <% if I18n.locale == :en %>
+        Action
+      <% else %>
+        Acción
+      <% end %>
+    <% end %>
+  </li>
+
+  <li>
+    <%= link_to root_path, class: '' do %>
+      <i class="far fa-calendar-alt"></i>
+      <% if I18n.locale == :en %>
+        Action
+      <% else %>
+        Acción
+      <% end %>
+    <% end %>
+  </li>
+  <!-- ./Section -->
+
+  <li><div class="divider"></div></li>
+
+  <!-- Section -->
+  <li>
+    <a class="subheader">
+      <% if I18n.locale == :en %>
+        Section
+      <% else %>
+        Sección
+      <% end %>
+    </a>
+  </li>
+
+  <li>
+    <%= link_to root_path, class: '' do %>
+      <i class="fas fa-users"></i>
+      <% if I18n.locale == :en %>
+        Action
+      <% else %>
+        Acción
+      <% end %>
+    <% end %>
+  </li>
+  <!-- ./Section -->
+
+  <li><div class="divider"></div></li>
+
+  <!-- Settings -->
+  <li>
+    <a class="subheader">
+      <% if I18n.locale == :en %>
+        Settings
+      <% else %>
+        Configuraciones
+      <% end %>
+    </a>
+  </li>
+
+  <li>
+    <%= link_to organization_path(current_organization.id), class: '' do %>
+      <i class="fas fa-user"></i>
+      <% if I18n.locale == :en %>
+        Profile
+      <% else %>
+        Perfil
+      <% end %>
+    <% end %>
+  </li>
+
+  <li>
+    <%= link_to edit_organization_path(current_organization.id), class: '' do %>
+      <i class="fas fa-user-cog"></i>
+      <% if I18n.locale == :en %>
+        Account
+      <% else %>
+        Cuenta
+      <% end %>
+    <% end %>
+  </li>
+  <!-- ./Settings -->
+
+  <li><div class="divider"></div></li>
+
+  <!-- Log Out -->
+  <li>
+    <%= link_to destroy_organization_session_path, method: :delete, class: '' do %>
+      <i class="fas fa-sign-out-alt"></i>
+      <% if I18n.locale == :en %>
+        Log out
+      <% else %>
+        Salir
+      <% end %>
+    <% end %>
+  </li>
+  <!-- ./Log Out -->
+</ul>
