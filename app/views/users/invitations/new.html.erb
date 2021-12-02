@@ -1,0 +1,78 @@
+<section class="devise-wrapper">
+  <div class="container">
+
+    <!-- Title --->
+    <div class="devise-title">
+      <div class="row">
+        <div class="col s12 m8 l8 offset-m2 offset-l2">
+          <h1>
+            <%= t "devise.invitations.new.header" %>
+          </h1>
+        </div>
+      </div>
+    </div>
+    <!-- ./Title --->
+
+    <!-- Content --->
+    <div class="devise-content">
+      <div class="row">
+        <div class="col s12 m8 l8 offset-m2 offset-l2">
+
+          <div class="row no-margin-bottom">
+            <div class="col s12">
+              <div class="form-wrapper">
+                <%= form_for(resource, as: resource_name, url: invitation_path(resource_name), html: { method: :post }) do |f| %>
+                  <%= render "users/shared/error_messages", resource: resource %>
+
+                  <% resource.class.invite_key_fields.each do |field| -%>
+                    <div class="row">
+                      <div class="col s12">
+                        <div class="input-field">
+                          <% if I18n.locale == :en %>
+                            <%= f.label field %>
+                          <% else %>
+                            <%= f.label field, 'Correo Electrónico' %>
+                          <% end %>
+                          <%= f.email_field field, id: :email, autofocus: true, class: 'validate' %>
+                        </div>
+                      </div>
+                    </div>
+                  <% end -%>
+
+                  <% if organization_signed_in? %>
+                    <%= f.hidden_field :organization_id, id: :organization_id, value: params[:organization_id].to_i %>
+                  <% end %>
+
+                  <div class="center-align btn-wrapper">
+                    <!-- Large Screens -->
+                    <div class="hide-on-small-only">
+                      <% if I18n.locale ==  :en %>
+                        <%= f.submit 'Invite', class: 'btn btn-large btn-bgt width-50' %>
+                      <% else %>
+                        <%= f.submit 'Invitar', class: 'btn btn-large btn-bgt width-50' %>
+                      <% end %>
+                    </div>
+                    <!-- ./Large Screens -->
+
+                    <!-- Small Screens -->
+                    <div class="hide-on-med-and-up">
+                      <% if I18n.locale ==  :en %>
+                        <%= f.submit 'Invite', class: 'btn btn-large btn-bgt width-100-percent' %>
+                      <% else %>
+                        <%= f.submit 'Invitar', class: 'btn btn-large btn-bgt width-100-percent' %>
+                      <% end %>
+                    </div>
+                    <!-- ./Small Screens -->
+                  </div>
+
+                <% end %>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

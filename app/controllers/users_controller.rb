@@ -1,8 +1,13 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i[ show edit update destroy ]
+  before_action :organizations_list
 
   def index
-    @users = User.all
+    if organization_signed_in?
+      @users = User.where(organization_id: current_organization.id)
+    else
+      @users = User.all
+    end
   end
 
   def show
@@ -32,6 +37,12 @@ class UsersController < ApplicationController
 
   def update
     @user.name = update_full_name
+
+    # Update User without password (By doing it this way, there is no need to change Devise Controller for Registration)
+    if params[:user][:password].blank? && params[:user][:password_confirmation].blank?
+      params[:user].delete(:password)
+      params[:user].delete(:password_confirmation)
+    end
 
     respond_to do |format|
       if @user.update(user_params)
@@ -63,13 +74,17 @@ class UsersController < ApplicationController
   # Private Methods
   #==============
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_user
-      @user = User.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_user
+    @user = User.find(params[:id])
+  end
 
-    # Only allow a list of trusted parameters through.
-    def user_params
-      params.require(:user).permit(:name, :first_name, :last_name, :email, :password, :password_confirmation)
-    end
+  def organizations_list
+    @organizations = Organization.all
+  end
+
+  # Only allow a list of trusted parameters through.
+  def user_params
+    params.require(:user).permit(:name, :first_name, :last_name, :email, :password, :password_confirmation, :organization_id)
+  end
 end

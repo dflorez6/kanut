@@ -1,4 +1,5 @@
 class Organization < ApplicationRecord
+  include DeviseInvitable::Inviter
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -13,6 +14,7 @@ class Organization < ApplicationRecord
   #====================
   # Associations
   #====================
+  has_many :users
 
   #====================
   # Scopes

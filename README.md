@@ -254,6 +254,29 @@ https://dashboard.ngrok.com/get-started/setup
 
     http://localhost:3000/rails/info/routes
 
+## Devise Invitable
+It adds support to Devise for sending invitations by email (it requires to be authenticated) and accept the invitation setting the password.
+
+* In the browser, go to the following link and follow installation and set up instructions:
+
+      https://github.com/scambra/devise_invitable
+
+* Add gem to Gemfile.rb
+
+      gem 'devise_invitable'
+
+* Then run the following commands
+
+      rails generate devise_invitable:install
+      rails generate devise_invitable MODEL
+      rails generate devise_invitable:views users
+
+* To add Spanish translation to devise_invitable locale, go to the following link and copy it to the project
+
+      https://gist.github.com/scambra/3918057#file-devise_invitable-es-yml
+
+
+
 
 # KANUT APP | Deployment Guide
 * Deploy to Heroku via Git

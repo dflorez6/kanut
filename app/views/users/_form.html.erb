@@ -22,6 +22,20 @@
         <%= form.email_field :email %>
       </div>
     </div>
+
+    <% if organization_signed_in? %>
+      <div class="col s12 m6 l6">
+        <div class="input-field">
+          <% if I18n.locale == :en %>
+            <%= form.label :organization_id, 'Organization' %>
+          <% else %>
+            <%= form.label :organization_id, 'Organización' %>
+          <% end %>
+          <input type="text" value="<%= @user.organization.name %>" disabled>
+          <%= form.hidden_field :organization_id, id: :organization_id, value: value=@user.organization_id %>
+        </div>
+      </div>
+    <% end %>
   </div>
 
   <div class="row">
@@ -48,29 +62,31 @@
     </div>
   </div>
 
+  <!--
   <div class="row">
     <div class="col s12 m6 l6">
       <div class="input-field">
         <% if I18n.locale == :en %>
-          <%= form.label :password, 'Password' %>
-        <% else %>
-          <%= form.label :password, 'Contraseña' %>
-        <% end %>
-        <%= form.password_field :password %>
+    <%= form.label :password, 'Password' %>
+  <% else %>
+    <%= form.label :password, 'Contraseña' %>
+  <% end %>
+  <%= form.password_field :password %>
       </div>
     </div>
 
     <div class="col s12 m6 l6">
       <div class="input-field">
         <% if I18n.locale == :en %>
-          <%= form.label :password_confirmation, 'Password Confirmation' %>
-        <% else %>
-          <%= form.label :password_confirmation, 'Confirmar contraseña' %>
-        <% end %>
-        <%= form.password_field :password_confirmation %>
+    <%= form.label :password_confirmation, 'Password Confirmation' %>
+  <% else %>
+    <%= form.label :password_confirmation, 'Confirmar contraseña' %>
+  <% end %>
+  <%= form.password_field :password_confirmation %>
       </div>
     </div>
   </div>
+  -->
 
 
   <!-- Submit -->

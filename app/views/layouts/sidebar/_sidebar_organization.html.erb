@@ -110,11 +110,22 @@
   <li>
     <a class="subheader">
       <% if I18n.locale == :en %>
-        Settings
+        Manage
       <% else %>
-        Configuraciones
+        Gestión
       <% end %>
     </a>
+  </li>
+
+  <li>
+    <%= link_to users_path, class: '' do %>
+      <i class="fas fa-users"></i>
+      <% if I18n.locale == :en %>
+        Users
+      <% else %>
+        Usuarios
+      <% end %>
+    <% end %>
   </li>
 
   <li>
