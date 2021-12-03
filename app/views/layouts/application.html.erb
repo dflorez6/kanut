@@ -45,10 +45,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"></script>
 
   <!-- Select2 -->
-  <!--
   <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.9/css/select2.min.css" rel="stylesheet" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.9/js/select2.full.min.js"></script>
-  -->
 
   <!-- Owl Carousel -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
@@ -89,7 +87,8 @@
 <script>
     document.addEventListener("turbolinks:load", function() {
         // $('.sidenav').sidenav();
-
+        $(".select2-input").select2();
+        $(".select2-dropdown").select2();
     });
 </script>
 

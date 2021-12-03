@@ -117,4 +117,32 @@ Rails.application.configure do
   # config.active_record.database_selector = { delay: 2.seconds }
   # config.active_record.database_resolver = ActiveRecord::Middleware::DatabaseSelector::Resolver
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
+
+  #===============
+  # MAILER
+  #===============
+  config.action_mailer.default_url_options = { host: 'aeth-3elet.herokuapp.com' } # TODO: Change HEROKU APP URL
+  # ActionMailer Config
+  # Setup for production - deliveries, no errors raised
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.default charset: 'utf-8'
+
+  config.action_mailer.smtp_settings = {
+    :address              => ENV['SENDGRID_SMTP_SERVER'],
+    :domain               => ENV['SENDGRID_DOMAIN'],
+    :user_name            => ENV['SENDGRID_USERNAME'],
+    :password             => ENV['SENDGRID_PASSWORD'],
+    :port                 => ENV['SENDGRID_PORT'],
+    :authentication       => :plain,
+    :enable_starttls_auto => true
+  }
+
+  # TODO: Uncomment to redirect HTTP to HTTPS once deployed to production to a Hobby Dyno & SSL config is done
+  #===============
+  # SSL
+  #===============
+  config.force_ssl = false
+
 end

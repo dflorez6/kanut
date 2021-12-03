@@ -1,0 +1,296 @@
+<section class="page-wrapper index-organizations-wrapper">
+
+  <!-- Title -->
+  <div class="container-app">
+    <div class="title-wrapper">
+
+      <div class="title">
+        <h1>
+          <% if I18n.locale == :en %>
+            Users
+          <% else %>
+            Usuarios
+          <% end %>
+        </h1>
+      </div>
+
+      <!-- ./Actions -->
+      <div class="title-actions">
+        <% if I18n.locale == :en %>
+          <%= link_to 'Add User', new_user_path, class: 'btn-app btn-app-dark' %>
+        <% else %>
+          <%= link_to 'Agregar User', new_user_path, class: 'btn-app btn-app-dark' %>
+        <% end %>
+
+        <% if organization_signed_in? %>
+          <% if I18n.locale == :en %>
+            <%= link_to 'Invite User', new_user_invitation_path(organization_id: current_organization.id), class: 'btn-app btn-app-green' %>
+          <% else %>
+            <%= link_to 'Invitar Usuario', new_user_invitation_path(organization_id: current_organization.id), class: 'btn-app btn-app-green' %>
+          <% end %>
+        <% else %>
+          <% if I18n.locale == :en %>
+            <%= link_to 'Invite User', new_user_invitation_path, class: 'btn-app btn-app-green' %>
+          <% else %>
+            <%= link_to 'Invitar Usuario', new_user_invitation_path, class: 'btn-app btn-app-green' %>
+          <% end %>
+        <% end %>
+      </div>
+      <!-- ./Actions -->
+
+    </div>
+  </div>
+  <!-- ./Title -->
+
+
+  <!-- Content -->
+  <div class="content">
+    <div class="container-app">
+
+      <div class="cards-wrapper">
+
+        <!-- User Cards -->
+        <% @users.each_slice(4) do |groups_of_four_cards| %>
+          <div class="cards-row">
+            <% groups_of_four_cards.each do |user| %>
+
+              <div class="card-app-wrapper">
+
+                <!-- Card Header -->
+                <%= link_to user_path(user) do %>
+                  <div class="card-app-header-wrapper">
+                    <div class="card-app-photo-wrapper">
+                      <%= image_tag 'customer_placeholder_square.jpg', alt: "#{user.name}", class: 'card-app-photo circle' %>
+                    </div>
+
+                    <div class="card-app-title-wrapper">
+                      <h2>
+                        <%= user.name %>
+                      </h2>
+                    </div>
+
+                    <div class="card-app-subtitle-wrapper">
+                      <h3>
+                        <%= user.email %>
+                      </h3>
+                    </div>
+                  </div>
+                <% end %>
+                <!-- ./Card Header -->
+
+                <!-- Card Body -->
+                <div class="card-app-body-wrapper">
+                  <% if I18n.locale == :en %>
+                    <p>
+                      # Invitees: <%= user.invitees.count %>
+                    </p>
+                    <p>
+                      <% if user.created_by_invite? %>
+                        Invited: Yes
+                      <% else %>
+                        Invited: No
+                      <% end %>
+                    </p>
+                    <p>
+                      <% if user.invitation_accepted? %>
+                        Accepted: Yes
+                      <% else %>
+                        Accepted: No
+                      <% end %>
+                    </p>
+                    <% if user.created_by_invite? %>
+                      <p>
+                        Inviter: <%= inviter(user) %>
+                      </p>
+                    <% end %>
+                  <% else %>
+                    <p>
+                      # Invitados: <%= user.invitees.count %>
+                    </p>
+                    <p>
+                      <% if user.created_by_invite? %>
+                        Invited: Sí
+                      <% else %>
+                        Invited: No
+                      <% end %>
+                    </p>
+                    <p>
+                      <% if user.invitation_accepted? %>
+                        Aceptó: Sí
+                      <% else %>
+                        Aceptó: No
+                      <% end %>
+                    </p>
+                    <% if user.created_by_invite? %>
+                      <p>
+                        Invitador: <%= inviter(user) %>
+                      </p>
+                    <% end %>
+                  <% end %>
+                </div>
+                <!-- ./Card Body -->
+
+                <!-- Card Footer -->
+                <div class="card-app-footer-wrapper">
+                  <div class="card-app-footer-action">
+                    <%= link_to user_path(user) do %>
+                      <i class="fas fa-user"></i>
+                    <% end %>
+                  </div>
+
+                  <div class="card-app-footer-action">
+                    <%= link_to edit_user_path(user) do %>
+                      <i class="fas fa-edit"></i>
+                    <% end %>
+                  </div>
+
+                  <div class="card-app-footer-action">
+                    <%= link_to user, method: :delete, data: { confirm: 'Are you sure?' } do %>
+                      <i class="fas fa-trash-alt"></i>
+                    <% end %>
+                  </div>
+                </div>
+                <!-- ./Card Footer -->
+
+              </div>
+
+            <% end %>
+          </div>
+        <% end %>
+        <!-- ./User Cards -->
+
+        <%# TODO: Add Pagination  %>
+
+      </div>
+
+    </div>
+  </div>
+  <!-- ./Content -->
+
+
+  <%# TODO: Create view as: Table or Cards %>
+  <!--
+  <table>
+    <thead>
+    <tr>
+      <th>
+        <% if I18n.locale == :en %>
+          Organization
+        <% else %>
+          Organización
+        <% end %>
+      </th>
+      <th>
+        <% if I18n.locale == :en %>
+          Avatar
+        <% else %>
+          Avatar
+        <% end %>
+      </th>
+      <th>
+        <% if I18n.locale == :en %>
+          Name
+        <% else %>
+          Nombre
+        <% end %>
+      </th>
+      <th>
+        <% if I18n.locale == :en %>
+          Email
+        <% else %>
+          Correo electrónico
+        <% end %>
+      </th>
+      <th>
+        <% if I18n.locale == :en %>
+          # Invitees
+        <% else %>
+          # Invitados
+        <% end %>
+      </th>
+      <th>
+        <% if I18n.locale == :en %>
+          Invited
+        <% else %>
+          Invitado
+        <% end %>
+      </th>
+      <th>
+        <% if I18n.locale == :en %>
+          Accepted
+        <% else %>
+          Acepto
+        <% end %>
+      </th>
+      <th>
+        <% if I18n.locale == :en %>
+          Inviter
+        <% else %>
+          Invitador
+        <% end %>
+      </th>
+
+      <th colspan="3"></th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <% if user.organization_id.blank? %>
+          <td colspan="1"></td>
+        <% else %>
+          <td>
+            <%= link_to organization_path(user.organization_id) do %>
+              <%= user.organization.name %>
+            <% end %>
+          </td>
+        <% end %>
+        <td colspan="1"></td>
+        <td>
+          <%= link_to user_path(user) do %>
+            <%= user.name %>
+          <% end %>
+        </td>
+        <td><%= user.email %></td>
+
+        <td>
+          <%= user.invitees.count %>
+        </td>
+        <td>
+          <% if user.created_by_invite? %>
+            <% if I18n.locale == :en %>
+              Yes
+            <% else %>
+              Sí
+            <% end %>
+          <% else %>
+            No
+          <% end %>
+        </td>
+        <td>
+          <% if user.invitation_accepted? %>
+            <% if I18n.locale == :en %>
+              Yes
+            <% else %>
+              Sí
+            <% end %>
+          <% else %>
+            No
+          <% end %>
+        </td>
+        <td>
+          <%= inviter(user) %>
+        </td>
+
+        <td><%= link_to 'Show', user %></td>
+        <td><%= link_to 'Edit', edit_user_path(user) %></td>
+        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+-->
+
+
+</section>

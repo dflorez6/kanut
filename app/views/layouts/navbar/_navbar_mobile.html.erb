@@ -27,8 +27,29 @@
 
       <ul id="mobileMenu" class="dropdown-content">
         <div class="mobile-menu-wrapper">
+          <% if administrator_signed_in? %>
+            <!-- Admin -->
+            <li class="">
+              <% if I18n.locale == :en %>
+                <%= link_to 'Dashboard', root_path(locale: 'en') %>
+              <% else %>
+                <%= link_to 'Dashboard', root_path(locale: 'es') %>
+              <% end %>
+            </li>
 
-          <% if user_signed_in? %>
+
+            <li class="admin-options">
+              <a href="#" data-target="slide-out" class="sidenav-trigger sidenav-trigger-admin">
+                <i class="fas fa-bars"></i>
+              </a>
+            </li>
+            <li class="">
+              <%= link_to destroy_administrator_session_path, method: :delete, class: '' do %>
+                <i class="fas fa-sign-out-alt"></i>
+              <% end %>
+            </li>
+            <!-- ./Admin -->
+          <% elsif user_signed_in? %>
             <!-- User -->
             <li class="">
               <% if I18n.locale == :en %>

@@ -1,0 +1,49 @@
+<%= form_with(model: administrator) do |form| %>
+  <% if administrator.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(administrator.errors.count, "error") %> prohibited this administrator from being saved:</h2>
+
+      <ul>
+        <% administrator.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <div class="col s12 m6 l6">
+      <div class="input-field">
+        <% if I18n.locale == :en %>
+          <%= form.label :name, 'Full Name' %>
+        <% else %>
+          <%= form.label :name, 'Nombre completo' %>
+        <% end %>
+        <%= form.text_field :name %>
+      </div>
+    </div>
+
+    <div class="col s12 m6 l6">
+      <div class="input-field">
+        <% if I18n.locale == :en %>
+          <%= form.label :email, 'E-mail' %>
+        <% else %>
+          <%= form.label :email, 'Correo electrónico' %>
+        <% end %>
+        <%= form.email_field :email %>
+      </div>
+    </div>
+  </div>
+
+  <!-- Submit -->
+  <div class="row">
+    <div class="col s12 m6 offset-m3 l4 offset-l4 center-align form-actions">
+      <% if I18n.locale == :es %>
+        <%= form.submit 'Guardar', class: 'btn-app btn-app-dark width-100' %>
+      <% else %>
+        <%= form.submit 'Save', class: 'btn-app btn-app-dark width-100' %>
+      <% end %>
+    </div>
+  </div>
+  <!-- ./Submit -->
+<% end %>
