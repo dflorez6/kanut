@@ -31,7 +31,12 @@
           <% else %>
             <%= form.label :organization_id, 'Organización' %>
           <% end %>
-          <input type="text" value="<%= @user.organization.name %>" disabled>
+          <% if @user.organization_id.blank? %>
+            <%= form.text_field :organization_id  %>
+            <%# TODO: ADD DROPDOWN LIST %>
+          <% else %>
+            <input type="text" value="<%= @user.organization.name %>" disabled>
+          <% end %>
           <%= form.hidden_field :organization_id, id: :organization_id, value: value=@user.organization_id %>
         </div>
       </div>
@@ -62,31 +67,31 @@
     </div>
   </div>
 
-  <!--
-  <div class="row">
-    <div class="col s12 m6 l6">
-      <div class="input-field">
-        <% if I18n.locale == :en %>
-    <%= form.label :password, 'Password' %>
-  <% else %>
-    <%= form.label :password, 'Contraseña' %>
-  <% end %>
-  <%= form.password_field :password %>
+  <% if administrator_signed_in? %>
+    <div class="row">
+      <div class="col s12 m6 l6">
+        <div class="input-field">
+          <% if I18n.locale == :en %>
+            <%= form.label :password, 'Password' %>
+          <% else %>
+            <%= form.label :password, 'Contraseña' %>
+          <% end %>
+          <%= form.password_field :password %>
+        </div>
       </div>
-    </div>
 
-    <div class="col s12 m6 l6">
-      <div class="input-field">
-        <% if I18n.locale == :en %>
-    <%= form.label :password_confirmation, 'Password Confirmation' %>
-  <% else %>
-    <%= form.label :password_confirmation, 'Confirmar contraseña' %>
-  <% end %>
-  <%= form.password_field :password_confirmation %>
+      <div class="col s12 m6 l6">
+        <div class="input-field">
+          <% if I18n.locale == :en %>
+            <%= form.label :password_confirmation, 'Password Confirmation' %>
+          <% else %>
+            <%= form.label :password_confirmation, 'Confirmar contraseña' %>
+          <% end %>
+          <%= form.password_field :password_confirmation %>
+        </div>
       </div>
     </div>
-  </div>
-  -->
+  <% end %>
 
 
   <!-- Submit -->

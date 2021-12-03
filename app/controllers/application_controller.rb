@@ -41,10 +41,12 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  # Devise: First sign in redirects to edit page to complete information
   def after_accept_path_for(resource)
-
     if resource.sign_in_count == 1
-      if user_signed_in?
+      if administrator_signed_in?
+        edit_administrator_path(current_administrator)
+      elsif user_signed_in?
         edit_user_path(current_user)
       elsif organization_signed_in?
         edit_organization_path(current_organization)
@@ -52,7 +54,30 @@ class ApplicationController < ActionController::Base
     else
       root_path
     end
+  end
 
+  # Devise, check if either Admin or Organization are signed_in?
+  def admin_or_organization_authenticated
+    unless administrator_signed_in? || organization_signed_in?
+      if I18n.locale == :en
+        flash[:warning] = "You do not have access permission."
+      else
+        flash[:warning] = "No tienes permiso de aceso."
+      end
+      redirect_to root_path
+    end
+  end
+
+  # Devise, check if either Admin or Organization or User are signed_in?
+  def resource_authenticated
+    unless administrator_signed_in? || organization_signed_in? || user_signed_in?
+      if I18n.locale == :en
+        flash[:warning] = "You do not have access permission."
+      else
+        flash[:warning] = "No tienes permiso de aceso."
+      end
+      redirect_to root_path
+    end
   end
 
 end

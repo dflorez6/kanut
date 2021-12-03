@@ -1,11 +1,14 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i[ show edit update destroy ]
   before_action :organizations_list
+  before_action :admin_or_organization_authenticated, only: %i[ index new create destroy ]
+  before_action :resource_authenticated, only: %i[ show edit update ]
 
   def index
-    if organization_signed_in?
-      @users = User.where(organization_id: current_organization.id)
-    else
+    if administrator_signed_in?
+      @users = User.all
+    elsif organization_signed_in?
+      # @users = User.where(organization_id: current_organization.id)
       @users = User.all
     end
   end

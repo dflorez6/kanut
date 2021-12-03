@@ -18,7 +18,7 @@
       </div>
 
       <div class="user-info">
-        <a href="#name">
+        <%= link_to organization_path(current_organization.id) do %>
           <span class="name">
             <% if current_organization.name.blank? %>
               Name Missing
@@ -26,9 +26,9 @@
               <%= current_organization.name %>
             <% end %>
           </span>
-        </a>
+        <% end %>
 
-        <a href="#email">
+        <%= link_to organization_path(current_organization.id) do %>
           <span class="email">
             <% if current_organization.email.blank? %>
               Email Missing
@@ -36,7 +36,7 @@
               <%= current_organization.email %>
             <% end %>
           </span>
-        </a>
+        <% end %>
       </div>
 
     </div>
@@ -85,34 +85,9 @@
   <li>
     <a class="subheader">
       <% if I18n.locale == :en %>
-        Section
-      <% else %>
-        Sección
-      <% end %>
-    </a>
-  </li>
-
-  <li>
-    <%= link_to root_path, class: '' do %>
-      <i class="fas fa-users"></i>
-      <% if I18n.locale == :en %>
-        Action
-      <% else %>
-        Acción
-      <% end %>
-    <% end %>
-  </li>
-  <!-- ./Section -->
-
-  <li><div class="divider"></div></li>
-
-  <!-- Settings -->
-  <li>
-    <a class="subheader">
-      <% if I18n.locale == :en %>
         Manage
       <% else %>
-        Gestión
+        Gestionar
       <% end %>
     </a>
   </li>
@@ -126,6 +101,20 @@
         Usuarios
       <% end %>
     <% end %>
+  </li>
+  <!-- ./Section -->
+
+  <li><div class="divider"></div></li>
+
+  <!-- Settings -->
+  <li>
+    <a class="subheader">
+      <% if I18n.locale == :en %>
+        Settings
+      <% else %>
+        Configuraciones
+      <% end %>
+    </a>
   </li>
 
   <li>

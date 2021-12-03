@@ -61,4 +61,17 @@
     color: $c-white;
   }
 
+  // Green
+  &.btn-app-green {
+    background-color: $c-green;
+    color: $c-white;
+  }
+
+  &.btn-app-green:hover,
+  .btn-app-green:focus,
+  .btn-app-green:active {
+    background-color: $c-green;
+    color: $c-white;
+  }
+
 }
