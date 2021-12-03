@@ -1,6 +1,15 @@
 <section class="page-wrapper private-wrapper show-wrapper">
   <div class="container-app">
 
+    <% unless @user.organization_id.blank? %>
+      <p>
+        <strong>Organization:</strong>
+        <%= link_to organization_path(@user.organization_id) do %>
+          <%= @user.organization.name %>
+        <% end %>
+      </p>
+    <% end %>
+
     <p>
       <strong>Avatar:</strong>
       <%#= @user.image %>

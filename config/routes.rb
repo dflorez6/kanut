@@ -8,6 +8,11 @@ Rails.application.routes.draw do
   # =========================
   # Devise
   # =========================
+  devise_for :administrators
+  devise_scope :administrator do
+    get '/admin', to: 'devise/sessions#new'
+  end
+
   devise_for :organizations
   devise_scope :organization do
     get '/organization_login', to: 'devise/sessions#new'
@@ -22,6 +27,7 @@ Rails.application.routes.draw do
   # =========================
   # Resources
   # =========================
+  resources :administrators
   resources :organizations
   resources :users
 

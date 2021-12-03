@@ -1,0 +1,40 @@
+<section class="page-wrapper private-wrapper new-wrapper">
+  <div class="container-app">
+
+    <!-- Title -->
+    <div class="title">
+      <div class="row">
+        <div class="col s12 m12 l12">
+          <h1>
+            <% if I18n.locale == :en %>
+              Edit Administrator
+            <% else %>
+              Editar administrador
+            <% end %>
+          </h1>
+        </div>
+      </div>
+    </div>
+    <!-- ./Title -->
+
+    <!-- Content -->
+    <div class="content">
+      <div class="row">
+        <div class="col s12 m12 l12">
+          <div class="form-wrapper">
+            <%= render 'form', administrator: @administrator %>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col s12 m12 l12 center-align">
+          <%= link_to 'Show', @administrator %> |
+          <%= link_to 'Back', administrators_path %>
+        </div>
+      </div>
+    </div>
+    <!-- ./Content -->
+
+  </div>
+</section>

@@ -1,0 +1,112 @@
+<section class="devise-wrapper">
+  <div class="container">
+
+    <!-- Title --->
+    <div class="devise-title">
+      <div class="row">
+        <div class="col s12 m8 l8 offset-m2 offset-l2">
+          <h1>
+            <% if I18n.locale == :en %>
+              Administrator Log In
+            <% else %>
+              Ingreso Administrador
+            <% end %>
+          </h1>
+        </div>
+      </div>
+    </div>
+    <!-- ./Title --->
+
+    <!-- Content --->
+    <div class="devise-content">
+      <div class="row">
+        <div class="col s12 m8 l8 offset-m2 offset-l2">
+
+          <div class="row no-margin-bottom">
+            <div class="col s12">
+              <div class="form-wrapper">
+                <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: 'form-wrapper' }) do |f| %>
+                  <%= devise_error_messages! %>
+
+                  <div class="row">
+                    <div class="col s12">
+                      <div class="input-field">
+                        <% if I18n.locale == :en %>
+                          <%= f.label :email %>
+                        <% else %>
+                          <%= f.label :email, 'Correo Electrónico' %>
+                        <% end %>
+                        <%= f.email_field :email, id: :email, autofocus: true, class: 'validate' %>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row no-margin-bottom">
+                    <div class="col s12">
+                      <div class="input-field">
+                        <% if I18n.locale == :en %>
+                          <%= f.label :password %>
+                        <% else %>
+                          <%= f.label :password, 'Contraseña' %>
+                        <% end %>
+                        <%= f.password_field :password, id: :password, class: 'validate', autocomplete: 'off' %>
+                      </div>
+                    </div>
+                  </div>
+
+                  <% if devise_mapping.rememberable? -%>
+                    <div class="row">
+                      <div class="col s12">
+                        <label>
+                          <% if I18n.locale == :en %>
+                            <%= f.check_box :remember_me %>
+                            <span>Remember Me</span>
+                          <% else %>
+                            <%= f.check_box :remember_me %>
+                            <span>Recordarme</span>
+                          <% end %>
+                        </label>
+                      </div>
+                    </div>
+                  <% end -%>
+
+                  <div class="center-align btn-wrapper">
+                    <!-- Large Screens -->
+                    <div class="hide-on-small-only">
+                      <% if I18n.locale ==  :en %>
+                        <%= f.submit 'Log In', class: 'btn btn-large btn-bgt width-50' %>
+                      <% else %>
+                        <%= f.submit 'Ingresar', class: 'btn btn-large btn-bgt width-50' %>
+                      <% end %>
+                    </div>
+                    <!-- ./Large Screens -->
+
+                    <!-- Small Screens -->
+                    <div class="hide-on-med-and-up">
+                      <% if I18n.locale ==  :en %>
+                        <%= f.submit 'Log In', class: 'btn btn-large btn-bgt width-100-percent' %>
+                      <% else %>
+                        <%= f.submit 'Ingresar', class: 'btn btn-large btn-bgt width-100-percent' %>
+                      <% end %>
+                    </div>
+                    <!-- ./Small Screens -->
+                  </div>
+
+                <% end %>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col s12 center-align">
+              <%= render "administrators/shared/links" %>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <!-- ./Content --->
+
+  </div>
+</section>

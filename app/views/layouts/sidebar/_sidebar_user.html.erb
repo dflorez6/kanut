@@ -18,7 +18,7 @@
       </div>
 
       <div class="user-info">
-        <a href="#name">
+        <%= link_to user_path(current_user.id) do %>
           <span class="name">
             <% if current_user.name.blank? %>
               Name Missing
@@ -26,9 +26,9 @@
               <%= current_user.name %>
             <% end %>
           </span>
-        </a>
+        <% end %>
 
-        <a href="#email">
+        <%= link_to user_path(current_user.id) do %>
           <span class="email">
             <% if current_user.email.blank? %>
               Email Missing
@@ -36,7 +36,7 @@
               <%= current_user.email %>
             <% end %>
           </span>
-        </a>
+        <% end %>
       </div>
 
     </div>

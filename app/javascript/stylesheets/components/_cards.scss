@@ -1,0 +1,108 @@
+// ================
+// Card: Basic
+// ================
+.cards-wrapper {
+
+  .cards-row {
+    display: flex;
+    flex-wrap: wrap;
+
+    .card-app-wrapper {
+      background: white;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      margin: 0 0 2rem 2%;
+      width: 23%;
+
+      // Header
+      .card-app-header-wrapper {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        padding: 2rem 1rem 1rem;
+
+        // Photo
+        .card-app-photo-wrapper {
+          margin: 0 0 0.5rem;
+          text-align: center;
+
+          img {
+            border: 5px solid $c-red;
+            width: 50%;
+          }
+        }
+
+        // Title
+        .card-app-title-wrapper {
+          h2 {
+            color: $c-red;
+            font-size: 1.25rem;
+            font-weight: $f-medium;
+          }
+        }
+
+        // Subtitle
+        .card-app-subtitle-wrapper {
+          h3 {
+            color: $c-text-primary;
+            font-size: 0.85rem;
+            font-weight: $f-normal;
+          }
+        }
+
+      }
+
+      // Body
+      .card-app-body-wrapper {
+        background: $c-text-primary;
+        color: $c-white;
+        flex-grow: 1;
+        margin: 0;
+        padding: 1.5rem 1rem 0.5rem;
+
+        p {
+          margin: 0;
+        }
+      }
+
+      // Footer
+      .card-app-footer-wrapper {
+        background: $c-text-primary;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        color: $c-white;
+        display: flex;
+        justify-content: right;
+        margin: 0;
+        padding: 0 1rem 0.75rem;;
+
+        // Actions
+        .card-app-footer-action {
+          a {
+            color: $c-white;
+            display: inline-block;
+            font-size: 1.1rem;
+            margin-left: 15px;
+
+            svg {
+              vertical-align: middle;
+            }
+          }
+        }
+
+      }
+
+
+    }
+
+  }
+
+  .cards-row {
+    .card-app-wrapper:last-child {
+      margin-right: 0;
+    }
+  }
+
+}

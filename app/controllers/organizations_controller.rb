@@ -1,5 +1,7 @@
 class OrganizationsController < ApplicationController
   before_action :set_organization, only: %i[ show edit update destroy ]
+  before_action :admin_or_organization_authenticated, only: %i[ index new create edit update destroy ]
+  before_action :resource_authenticated, only: %i[ show ]
 
   def index
     @organizations = Organization.all

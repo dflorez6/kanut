@@ -1,0 +1,52 @@
+//================
+// Users
+//================
+
+//----------------
+// Index: Organizations
+//----------------
+.index-organizations-wrapper {
+  background: $c-l-gray-bg;
+
+  // Container
+  .container-app {
+    padding: 0 2rem;
+  }
+
+  // Title
+  .title-wrapper {
+    align-items: center;
+    display: flex;
+
+    .title {
+      flex-grow: 1;
+      margin: 0 0 1.5rem;
+      padding: 2rem 0 0;
+    }
+
+    .title-actions {
+      text-align: right;
+      width: 50%;
+
+      .btn-app {
+        display: inline-block;
+        line-height: 35px;
+        min-height: 35px;
+        text-align: center;
+        width: 30%;
+      }
+
+    }
+
+  }
+
+
+  // Content
+  .content {
+    .container-app {
+      padding-bottom: 5rem;
+    }
+  }
+
+
+}

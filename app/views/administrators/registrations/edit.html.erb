@@ -1,0 +1,157 @@
+<section class="devise-wrapper">
+  <div class="container">
+
+    <!-- Title --->
+    <div class="devise-title">
+      <div class="row">
+        <div class="col s12 m8 l8 offset-m2 offset-l2">
+          <h1>
+            <% if I18n.locale == :en %>
+              Edit Administrator: <%= resource_name.to_s.humanize %>
+            <% else %>
+              Editar Administrador: <%= resource_name.to_s.humanize %>
+            <% end %>
+          </h1>
+        </div>
+      </div>
+    </div>
+    <!-- ./Title --->
+
+    <!-- Content --->
+    <div class="devise-content">
+      <div class="row">
+        <div class="col s12 m8 l8 offset-m2 offset-l2">
+
+          <div class="row no-margin-bottom">
+            <div class="col s12">
+              <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: 'form-wrapper', method: :put }) do |f| %>
+                <%= devise_error_messages! %>
+
+                <div class="row">
+                  <div class="col s12">
+                    <div class="input-field">
+                      <% if I18n.locale == :en %>
+                        <%= f.label :email %>
+                      <% else %>
+                        <%= f.label :email, 'Correo Electrónico' %>
+                      <% end %>
+                      <%= f.email_field :email, id: :email, autofocus: true, class: 'validate' %>
+                    </div>
+                  </div>
+                </div>
+
+                <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+                  <div class="row">
+                    <div class="col s12">
+                      <div>
+                        <% if I18n.locale == :en %>
+                          Currently waiting confirmation for: <%= resource.unconfirmed_email %>
+                        <% else %>
+                          Actualmente esperando confirmación para: <%= resource.unconfirmed_email %>
+                        <% end %>
+                      </div>
+                    </div>
+                  </div>
+                <% end %>
+
+                <div class="row">
+                  <div class="col s12">
+                    <div class="input-field">
+                      <% if I18n.locale == :en %>
+                        <%= f.label :password, 'Password (6 characters minimum)' %>
+                      <% else %>
+                        <%= f.label :password, 'Contraseña (6 caracteres mínimo)' %>
+                      <% end %>
+                      <%= f.password_field :password, id: :password, class: 'validate', autocomplete: 'off' %>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col s12">
+                    <div class="input-field">
+                      <% if I18n.locale == :en %>
+                        <%= f.label :password_confirmation %>
+                      <% else %>
+                        <%= f.label :password_confirmation, 'Confirmar Contraseña' %>
+                      <% end %>
+                      <%= f.password_field :password_confirmation, id: :password_confirmation, class: 'validate', autocomplete: 'off' %>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col s12">
+                    <div class="input-field">
+                      <% if I18n.locale == :en %>
+                        <%= f.label :current_password %><i>(we need your current password to confirm your changes)</i>
+                      <% else %>
+                        <%= f.label :current_password, 'Contraseña Actual' %><i>(Necesitamos tu contraseña actual para confirmar tus cambios.)</i>
+                      <% end %>
+                      <%= f.password_field :current_password, id: :current_password, class: 'validate', autocomplete: 'current-password' %>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="center-align btn-wrapper">
+                  <!-- Large Screens -->
+                  <div class="hide-on-small-only">
+                    <% if I18n.locale ==  :en %>
+                      <%= f.submit 'Sign up', class: 'btn btn-large btn-bgt width-50' %>
+                    <% else %>
+                      <%= f.submit 'Registrarse', class: 'btn btn-large btn-bgt width-50' %>
+                    <% end %>
+                  </div>
+                  <!-- ./Large Screens -->
+
+                  <!-- Small Screens -->
+                  <div class="hide-on-med-and-up">
+                    <% if I18n.locale ==  :en %>
+                      <%= f.submit 'Update', class: 'btn btn-large btn-bgt width-100-percent' %>
+                    <% else %>
+                      <%= f.submit 'Actualizar', class: 'btn btn-large btn-bgt width-100-percent' %>
+                    <% end %>
+                  </div>
+                  <!-- ./Small Screens -->
+                </div>
+
+
+
+                <div class="cancel-account">
+                  <%# TODO: Devise Cancel Account UI %>
+                  <h3>
+                    <% if I18n.locale == :en %>
+                      Cancel my account
+                    <% else %>
+                      Cancelar mi cuenta
+                    <% end %>
+                  </h3>
+
+                  <p>
+                    <% if I18n.locale == :en %>
+                      Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %>
+                    <% else %>
+                      ¿Insatisfecho? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "¿Estás seguro?" }, method: :delete %>
+                    <% end %>
+                  </p>
+
+                  <%= link_to "Back", :back %>
+                </div>
+
+              <% end %>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col s12 center-align">
+              <%= render "administrators/shared/links" %>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <!-- ./Content --->
+
+  </div>
+</section>

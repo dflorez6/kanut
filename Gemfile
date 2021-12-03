@@ -19,6 +19,7 @@ gem 'puma', '~> 5.0'
 # Authentication
 #===============#
 gem 'devise'
+gem 'devise_invitable' # Adds support to Devise for sending invitations by email (it requires to be authenticated) and accept the invitation setting the password.
 
 #===============#
 # Authorization/Roles

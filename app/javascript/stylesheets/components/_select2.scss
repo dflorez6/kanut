@@ -1,0 +1,106 @@
+// ================
+// Select2
+// ================
+.select2-container {
+  width: 100% !important;
+}
+
+.select2-container--default .select2-selection--single {
+  background: $c-gray-input !important;
+  border: 0 !important;
+  border-bottom: 1px solid $c-input-border !important;
+  border-radius: 0 !important;
+  height: 45px !important;
+  line-height: 45px !important;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+  color: $c-black !important;
+  font-size: 1.25rem !important;
+}
+
+.select2-container .select2-selection--single .select2-selection__rendered {
+  font-size: 1.25rem !important;
+  height: 45px !important;
+  line-height: 45px !important;
+}
+
+.select2-search__field {
+  background: $c-gray-input !important;
+  border-bottom: 1px solid $c-input-border !important;
+}
+
+.select2-selection__choice {
+  background-color: $c-text-secondary !important;
+  border-color: $c-text-secondary !important;
+  border-radius: 2px !important;
+  color: $c-black !important;
+  font-size: 1.25rem !important;
+  margin-right: 15px !important;
+  padding: 5px 10px !important;
+}
+
+.select2-selection__choice__remove {
+  color: $c-black !important;
+  margin-right: 5px !important;
+}
+
+.select2-dropdown {
+  background-color: $c-white !important;
+  border-color: $c-input-border !important;
+  border-radius: 0 !important;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+  display: none !important;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow b {
+  border-width: 8px 5px 0 5px !important;
+}
+
+.select2-container--open .select2-dropdown--above {
+  background-color: $c-white !important;
+  border-color: $c-input-border !important;
+  border-radius: 0 !important;
+  font-size: 1.25rem !important;
+}
+
+.select2-dropdown select2-dropdown--below {
+  background-color: $c-white !important;
+  border-color: $c-input-border !important;
+  border-radius: 0 !important;
+  font-size: 1.25rem !important;
+}
+
+.select2-container--default .select2-results__option--highlighted[aria-selected] {
+  background-color: $c-text-primary !important;
+  color: $c-white !important;
+  font-size: 1.25rem !important;
+}
+
+.select2-container--default .select2-results__option[aria-selected=true] {
+  background-color: $c-text-primary !important;
+  color: $c-white !important;
+  font-size: 1.25rem !important;
+}
+
+.select2-results__option--selectable {
+  font-size: 1.25rem !important;
+}
+
+.select2-container--default .select2-results__option--disabled {
+  font-size: 1.25rem !important;
+}
+
+// Select2 for Search Box
+.select2-container--default .select2-search--dropdown .select2-search__field {
+  border: 0 !important;
+  border-bottom: 1px solid $c-input-border !important;
+}
+
+input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):focus:not([readonly]), input[type=password]:not(.browser-default):focus:not([readonly]), input[type=email]:not(.browser-default):focus:not([readonly]), input[type=url]:not(.browser-default):focus:not([readonly]), input[type=time]:not(.browser-default):focus:not([readonly]), input[type=date]:not(.browser-default):focus:not([readonly]), input[type=datetime]:not(.browser-default):focus:not([readonly]), input[type=datetime-local]:not(.browser-default):focus:not([readonly]), input[type=tel]:not(.browser-default):focus:not([readonly]), input[type=number]:not(.browser-default):focus:not([readonly]), input[type=search]:not(.browser-default):focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
+  border-bottom: 0 !important;
+  // border-bottom: 1 solid $c-input-border !important;
+  box-shadow: 0 1px 0 0 $c-input-border !important;
+}

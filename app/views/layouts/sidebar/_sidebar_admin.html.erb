@@ -1,0 +1,178 @@
+<ul id="slide-out" class="sidenav sidenav-aeth">
+  <!-- Header -->
+  <li>
+    <div class="user-view sidenav-aeth-header">
+      <div class="background">
+        <%= image_tag 'sidenav_bg_01.jpg', alt: '', class: '' %>
+      </div>
+
+      <div class="user-img">
+        <a href="#user">
+          <%= image_tag 'customer_placeholder_square.jpg', alt: "", class: 'circle' %>
+          <%# if current_user.images.blank? %>
+          <%#= image_tag 'customer_placeholder_square.jpg', alt: "", class: 'circle' %>
+          <%# else %>
+          <%#= image_tag current_user.images.last.image.url, alt: "", class: 'circle' %>
+          <%# end %>
+        </a>
+      </div>
+
+      <div class="user-info">
+        <a href="#name">
+          <span class="name">
+            <% if I18n.locale == :en %>
+              Administrator
+            <% else %>
+              Administrador
+            <% end %>
+          </span>
+        </a>
+
+        <%= link_to administrator_path(current_administrator.id) do %>
+          <span class="name">
+            <% if current_administrator.name.blank? %>
+              Name Missing
+            <% else %>
+              <%= current_administrator.name %>
+            <% end %>
+          </span>
+        <% end %>
+
+        <%= link_to administrator_path(current_administrator.id) do %>
+          <span class="email">
+            <% if current_administrator.email.blank? %>
+              Email Missing
+            <% else %>
+              <%= current_administrator.email %>
+            <% end %>
+          </span>
+        <% end %>
+      </div>
+
+    </div>
+  </li>
+  <!-- ./Header -->
+
+
+  <!-- Manage -->
+  <li>
+    <a class="subheader">
+      <% if I18n.locale == :en %>
+        Manage
+      <% else %>
+        Gestionar
+      <% end %>
+    </a>
+  </li>
+
+  <li>
+    <%= link_to organizations_path, class: '' do %>
+      <i class="fas fa-building"></i>
+      <% if I18n.locale == :en %>
+        Organizations
+      <% else %>
+        Organizaciones
+      <% end %>
+    <% end %>
+  </li>
+
+  <li>
+    <%= link_to users_path, class: '' do %>
+      <i class="fas fa-users"></i>
+      <% if I18n.locale == :en %>
+        Users
+      <% else %>
+        Usuarios
+      <% end %>
+    <% end %>
+  </li>
+  <!-- ./Manage -->
+
+  <li><div class="divider"></div></li>
+
+  <!-- Section -->
+  <li>
+    <a class="subheader">
+      <% if I18n.locale == :en %>
+        Section
+      <% else %>
+        Sección
+      <% end %>
+    </a>
+  </li>
+
+
+  <li>
+    <%= link_to root_path, class: '' do %>
+      <i class="far fa-calendar-alt"></i>
+      <% if I18n.locale == :en %>
+        Action
+      <% else %>
+        Acción
+      <% end %>
+    <% end %>
+  </li>
+
+  <li>
+    <%= link_to root_path, class: '' do %>
+      <i class="far fa-calendar-alt"></i>
+      <% if I18n.locale == :en %>
+        Action
+      <% else %>
+        Acción
+      <% end %>
+    <% end %>
+  </li>
+  <!-- ./Section -->
+
+  <li><div class="divider"></div></li>
+
+  <!-- Settings -->
+  <li>
+    <a class="subheader">
+      <% if I18n.locale == :en %>
+        Settings
+      <% else %>
+        Configuraciones
+      <% end %>
+    </a>
+  </li>
+
+  <li>
+    <%= link_to administrator_path(current_administrator.id), class: '' do %>
+      <i class="fas fa-user"></i>
+      <% if I18n.locale == :en %>
+        Profile
+      <% else %>
+        Perfil
+      <% end %>
+    <% end %>
+  </li>
+
+  <li>
+    <%= link_to edit_administrator_path(current_administrator.id), class: '' do %>
+      <i class="fas fa-user-cog"></i>
+      <% if I18n.locale == :en %>
+        Account
+      <% else %>
+        Cuenta
+      <% end %>
+    <% end %>
+  </li>
+  <!-- ./Settings -->
+
+  <li><div class="divider"></div></li>
+
+  <!-- Log Out -->
+  <li>
+    <%= link_to destroy_administrator_session_path, method: :delete, class: '' do %>
+      <i class="fas fa-sign-out-alt"></i>
+      <% if I18n.locale == :en %>
+        Log out
+      <% else %>
+        Salir
+      <% end %>
+    <% end %>
+  </li>
+  <!-- ./Log Out -->
+</ul>
